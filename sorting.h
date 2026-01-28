@@ -1,6 +1,7 @@
 #include <iomanip>
 void swap(int &a, int &b);
-void sort(int *a, int N);
+void selectionsort(int *a, int N);
+void bubblesort(int *a, int N);
 void display(int *a, int N);
 
 void swap(int &a,int &b){
@@ -21,7 +22,7 @@ void swap(int &a,int &b){
         
 }*/
 
-void sort(int *a, int N) {
+void bubblesort(int *a, int N) {
     int i, j;
     // Outer loop: Tells the program how many passes to make
     for (j = 0; j < N - 1; j++) {
@@ -31,6 +32,21 @@ void sort(int *a, int N) {
                 swap(a[i], a[i + 1]);
             }
         }
+    }
+}
+
+void selectionsort(int *a, int N) {
+    int i,j,mi;
+    for (j=0;j<N-1;j++){
+        mi=j;
+        for (i=1+j;i<N;i++){
+        if (a[i]<a[mi]){
+            mi=i;
+        }
+    }
+    if (mi!=j){
+    swap(a[j],a[mi]);
+    }
     }
 }
 

@@ -19,8 +19,9 @@ int main(int argc, char * argv[]) {
 
     N = argc - 1;
 
+    
     display(a, N);
-    sort(a, N);
+    selectionsort(a, N);
     display(a, N);
 
     delete[] a;
