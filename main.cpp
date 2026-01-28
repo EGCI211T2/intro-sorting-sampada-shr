@@ -10,28 +10,19 @@ using namespace std;
 #include "sorting.h"
 
 int main(int argc, char * argv[]) {
-    
- 
-  cout<<"argc is "<<argc<<endl;
-    int i,N;
+    int i, N;
     int *a;
-    a= new int [argc -1];
-    for(i=1;i<argc;i++){
-      cout<<"argv[" << i<<"]" <<argv[i]<<endl;
-      a[i-1] = atoi(argv[i]); 
-      cout<<a[i-1]<<endl;
+    a = new int [argc - 1];
+    for (i = 1; i < argc; i++) {
+        a[i - 1] = atoi(argv[i]);
     }
 
-    N=argc-1;
+    N = argc - 1;
 
-    cout<<"Before sorting:";
-    display(a,N);
-    
-    sort(a,N);
-    cout<<"After sorting:";
-    display(a,N);
- 
-    delete []a;
-    
+    display(a, N);
+    sort(a, N);
+    display(a, N);
+
+    delete[] a;
     return 0;
 }
