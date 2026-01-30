@@ -35,7 +35,7 @@ void bubblesort(int *a, int N) {
     }
 }
 
-void selectionsort(int *a, int N) {
+/*void selectionsort(int *a, int N) {
     int i,j,mi;
     for (j=0;j<N-1;j++){
         mi=j;
@@ -47,6 +47,35 @@ void selectionsort(int *a, int N) {
     if (mi!=j){
     swap(a[j],a[mi]);
     }
+    }
+}*/
+
+void selectionsort(int *a, int N) {
+    int i,j;
+    int *m;
+    for (j=0;j<N-1;j++){
+        m=&a[j];
+        for (i=1+j;i<N;i++){
+        if (a[i]<*m){
+            m=&a[i];
+        }
+    }
+    swap(a[j],*m);
+    }
+}
+
+void insertionsort(int *a, int n){
+    int i,j,new_number;
+    for (j=1;j<n;j++){
+        cout<<"==Round "<<j<<endl;
+        new_number=a[j];
+        for (i=j-1;i>=0;i--){
+        if (new_number<a[i]) a[i+1]=a[i];
+        else break;
+        display(a,n);
+        }
+        display (a,n);
+        a[i+1]=new_number;
     }
 }
 

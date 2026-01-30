@@ -21,7 +21,7 @@ int main(int argc, char * argv[]) {
 
     
     display(a, N);
-    selectionsort(a, N);
+    insertionsort(a, N);
     display(a, N);
 
     delete[] a;
